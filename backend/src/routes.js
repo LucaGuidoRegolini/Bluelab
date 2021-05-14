@@ -1,11 +1,13 @@
-import { Router } from "express";
+const { Router } = require("express");
 
-import ClientControle from "./controllers/ClientControler.js";
+const ClientControle = require("./controllers/clientControler.js");
 
 const router = Router();
 
 router.get("/", ClientControle.index);
-
+router.get("/:id", ClientControle.select);
 router.post("/", ClientControle.create);
+router.put("/:id", ClientControle.update);
+router.delete("/:id", ClientControle.del);
 
-export default router;
+module.exports = router;

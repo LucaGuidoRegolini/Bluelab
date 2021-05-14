@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "database": "${workspaceFolder:Bluelab}/backend/src/database/db.sqlite",
+            "name": "Cliente"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}
