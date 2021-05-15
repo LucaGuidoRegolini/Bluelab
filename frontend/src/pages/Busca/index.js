@@ -12,6 +12,18 @@ export default function Busca() {
   const [sobrenome, setsobrenome] = useState("");
   const [telefone, settelefone] = useState("");
 
+  if (localStorage.getItem("cpf") !== null) {
+    const cpf = localStorage.getItem("cpf");
+    setcpf(cpf);
+    localStorage.removeItem("cpf");
+    api.get("/" + cpf).then((response) => {
+      const { nome, sobrenome, telefone } = response.data.cliente[0];
+      setnome(nome);
+      setsobrenome(sobrenome);
+      settelefone(telefone);
+    });
+  }
+
   async function mudaCliente(e) {
     e.preventDefault();
 
@@ -22,7 +34,6 @@ export default function Busca() {
     };
 
     if (cpf !== "" && nome !== "") {
-      console.log(nome);
       if (confirm(`Quer alterar o registro de ${nome}?`)) {
         api
           .put("/" + cpf, data)

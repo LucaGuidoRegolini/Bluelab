@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
 import api from "../../services/api";
 
@@ -6,6 +7,13 @@ import "./styles.css";
 
 export default function Lista() {
   const [clients, setclients] = useState([]);
+  const history = useHistory();
+
+  async function teste(cpf) {
+    console.log(localStorage.getItem("cpf"));
+    localStorage.setItem("cpf", cpf);
+    history.push("/busca");
+  }
 
   useEffect(() => {
     api.get("/?page1&total=2").then((response) => {
@@ -17,7 +25,11 @@ export default function Lista() {
     <div className="body center">
       <ul className="list">
         {clients.map((client) => (
-          <div className="item" key={client.cpf}>
+          <div
+            className="item"
+            onClick={() => teste(client.cpf)}
+            key={client.cpf}
+          >
             <div>
               <p className="label">Nome:</p>
               <p className="date">{`${client.nome} ${client.sobrenome}`}</p>
