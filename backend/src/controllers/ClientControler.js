@@ -44,6 +44,11 @@ module.exports = {
         sucess: false,
         msg: "CPF ja cadastrado",
       });
+    } else if (!cliente.validaCPF(cpf)) {
+      return res.status(400).json({
+        sucess: false,
+        msg: "CPF Invalido",
+      });
     } else if (nome == null || nome == "") {
       return res.status(400).json({
         sucess: false,
@@ -53,11 +58,6 @@ module.exports = {
       return res.status(400).json({
         sucess: false,
         msg: "Telefone Invalido",
-      });
-    } else if (!cliente.validaCPF(cpf)) {
-      return res.status(400).json({
-        sucess: false,
-        msg: "CPF Invalido",
       });
     } else {
       await connection("clientes").insert({

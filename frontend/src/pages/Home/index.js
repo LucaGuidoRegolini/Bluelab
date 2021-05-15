@@ -1,4 +1,5 @@
 import { useState } from "react";
+import InputMask from "react-input-mask";
 
 import api from "../../services/api";
 
@@ -40,12 +41,13 @@ export default function Home() {
       <div className="card center">
         <form className="form-form" onSubmit={novoCliente}>
           <label className="label-form">CPF</label>
-          <input
+          <InputMask
+            mask="99999999999"
             className="input-form"
             placeholder="86741190007"
             value={cpf}
             onChange={(e) => setcpf(e.target.value)}
-          ></input>
+          ></InputMask>
           <label className="label-form">Nome</label>
           <input
             className="input-form"
@@ -61,12 +63,13 @@ export default function Home() {
             onChange={(e) => setsobrenome(e.target.value)}
           ></input>
           <label className="label-form">Telefone</label>
-          <input
+          <InputMask
+            mask="(99)999999999"
             className="input-form"
-            placeholder="(11)9999-99999"
+            placeholder="(11)999999999"
             value={telefone}
             onChange={(e) => settelefone(e.target.value)}
-          ></input>
+          ></InputMask>
           <button type="submit" className="botao-form ">
             Criar
           </button>

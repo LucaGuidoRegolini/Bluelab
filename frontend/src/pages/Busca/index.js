@@ -1,6 +1,7 @@
 /* eslint-disable no-restricted-globals */
 import { useState } from "react";
 import { FiSearch } from "react-icons/fi";
+import InputMask from "react-input-mask";
 
 import api from "../../services/api";
 
@@ -126,12 +127,13 @@ export default function Busca() {
               onChange={(e) => setsobrenome(e.target.value)}
             ></input>
             <label className="label-form">Telefone</label>
-            <input
+            <InputMask
+              mask="(99)999999999"
               className="input-form"
-              placeholder="(11)9999-99999"
+              placeholder="(11)999999999"
               value={telefone}
               onChange={(e) => settelefone(e.target.value)}
-            ></input>
+            ></InputMask>
             <div className="botoes">
               <button
                 type="button"

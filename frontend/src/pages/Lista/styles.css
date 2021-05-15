@@ -1,6 +1,12 @@
-.body {
-  margin: 0;
-  width: 100vw;
+.flex {
+  display: flex;
+}
+
+.barra-pesquisa {
+  margin: 6px;
+  margin-right: 20px;
+  border-radius: 8px;
+  border: solid 1px;
 }
 
 .list {
