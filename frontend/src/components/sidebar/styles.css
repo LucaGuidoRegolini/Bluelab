@@ -1,0 +1,29 @@
+.header-sidebar {
+  width: 100vw;
+  height: 60px;
+  background-color: #1f8de9;
+
+  display: flex;
+
+  align-items: center;
+}
+
+.espaco {
+  flex-grow: 1;
+}
+
+.botao-sidebar {
+  height: 80%;
+  width: 100px;
+  margin: 0 5px;
+  border-radius: 8px;
+  padding: 0;
+  border: none;
+  background: none;
+  font-size: 20px;
+  color: white;
+}
+
+.botao-sidebar:hover {
+  background: #1561a073;
+}

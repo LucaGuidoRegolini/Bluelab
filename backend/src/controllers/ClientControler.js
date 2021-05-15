@@ -3,7 +3,15 @@ const connection = require("../database/conection");
 
 module.exports = {
   async index(req, res) {
-    const clientes = await connection("clientes").select("*");
+    const [count] = await connection("clientes").count();
+    const { page = 1, total = count["count(*)"] } = req.query;
+
+    const clientes = await connection("clientes")
+      .limit(total)
+      .offset((page - 1) * total)
+      .select("*");
+
+    res.header("X-Total-Count", count["count(*)"]);
     return res.status(202).json({
       sucess: true,
       clientes,
@@ -27,13 +35,19 @@ module.exports = {
   },
 
   async create(req, res) {
-    const { nome, sobrenome, telefone, cpf } = req.body;
+    const { nome, sobrenome = "", telefone, cpf } = req.body;
 
     const resultado = await cliente.confereCliente(cpf);
+
     if (resultado == true) {
       return res.status(409).json({
         sucess: false,
         msg: "CPF ja cadastrado",
+      });
+    } else if (nome == null || nome == "") {
+      return res.status(400).json({
+        sucess: false,
+        msg: "Nome em branco",
       });
     } else if (!cliente.validaTelefone(telefone)) {
       return res.status(400).json({
@@ -92,7 +106,7 @@ module.exports = {
         sucess: true,
       });
     } else {
-      return res.status(404).json({
+      return res.status(400).json({
         sucess: false,
         msg: "Cliente não existe",
       });
