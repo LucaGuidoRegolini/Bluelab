@@ -8,10 +8,6 @@
   align-items: center;
 }
 
-.espaco {
-  flex-grow: 1;
-}
-
 .botao-sidebar {
   height: 80%;
   width: 100px;

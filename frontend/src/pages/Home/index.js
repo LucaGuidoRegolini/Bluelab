@@ -23,7 +23,7 @@ export default function Home() {
     api
       .post("/", data)
       .then((response) => {
-        alert("Cliente Cadastrado");
+        alert(`${nome} registrado`);
         setcpf("");
         setnome("");
         setsobrenome("");
@@ -38,31 +38,31 @@ export default function Home() {
   return (
     <div className="body center">
       <div className="card center">
-        <form className="form-home" onSubmit={novoCliente}>
-          <label className="label-home">CPF</label>
+        <form className="form-form" onSubmit={novoCliente}>
+          <label className="label-form">CPF</label>
           <input
-            className="input-home"
+            className="input-form"
             placeholder="86741190007"
             value={cpf}
             onChange={(e) => setcpf(e.target.value)}
           ></input>
-          <label className="label-home">Nome</label>
+          <label className="label-form">Nome</label>
           <input
-            className="input-home"
+            className="input-form"
             placeholder="Nome"
             value={nome}
             onChange={(e) => setnome(e.target.value)}
           ></input>
-          <label className="label-home">Sobrenome</label>
+          <label className="label-form">Sobrenome</label>
           <input
-            className="input-home"
+            className="input-form"
             placeholder="Sobrenome"
             value={sobrenome}
             onChange={(e) => setsobrenome(e.target.value)}
           ></input>
-          <label className="label-home">Telefone</label>
+          <label className="label-form">Telefone</label>
           <input
-            className="input-home"
+            className="input-form"
             placeholder="(11)9999-99999"
             value={telefone}
             onChange={(e) => settelefone(e.target.value)}

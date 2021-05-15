@@ -39,7 +39,7 @@ module.exports = {
 
     const resultado = await cliente.confereCliente(cpf);
 
-    if (resultado == true) {
+    if (resultado) {
       return res.status(409).json({
         sucess: false,
         msg: "CPF ja cadastrado",
@@ -74,10 +74,16 @@ module.exports = {
   },
 
   async update(req, res) {
-    const { id } = req.params;
+    const { id } = await req.params;
     const { nome, sobrenome, telefone } = req.body;
+    const resultado = await cliente.confereCliente(id);
 
-    if (!cliente.validaTelefone(telefone)) {
+    if (!resultado) {
+      return res.status(409).json({
+        sucess: false,
+        msg: "CPF não encontrado",
+      });
+    } else if (!cliente.validaTelefone(telefone)) {
       return res.status(400).json({
         sucess: false,
         msg: "Telefone Invalido",
