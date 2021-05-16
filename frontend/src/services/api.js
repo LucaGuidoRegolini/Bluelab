@@ -1,9 +1,9 @@
 import axios from "axios";
 
 const apiUrl =
-  process.env.NODE_ENV === "build"
-    ? "https://blulab-api.herokuapp.com/"
-    : "http://localhost:3333";
+  process.env.REACT_APP_ENV === "dev"
+    ? "http://localhost:3333"
+    : "https://blulab-api.herokuapp.com/";
 
 const api = axios.create({
   baseURL: apiUrl,

@@ -1,3 +1,11 @@
 const app = require("./app");
+const connection = require("./database/conection");
 
-app.listen(process.env.PORT || 3333);
+async function start() {
+  await connection.migrate.rollback();
+  await connection.migrate.latest();
+
+  app.listen(process.env.PORT || 3333);
+}
+
+start();
