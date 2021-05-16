@@ -7,7 +7,7 @@
   "scripts": {
     "test": "cross-env NODE_ENV=test jest",
     "dev": "nodemon ./src/server.js",
-    "start": "nodemon ./src/server.js"
+    "start": "node ./src/server.js"
   },
   "author": "Luca Guido Regolini",
   "license": "ISC",
