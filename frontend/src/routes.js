@@ -5,6 +5,7 @@ import Busca from "./pages/Busca";
 import Lista from "./pages/Lista";
 
 import Sidebar from "./components/sidebar";
+import Footer from "./components/footer";
 
 export default function Routes() {
   return (
@@ -15,6 +16,7 @@ export default function Routes() {
         <Route path="/busca" exact component={Busca} />
         <Route path="/lista" exact component={Lista} />
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 }

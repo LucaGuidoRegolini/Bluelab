@@ -1,0 +1,18 @@
+.footer {
+  width: 100%;
+  height: 60px;
+  background-color: black;
+
+  display: flex;
+
+  align-items: center;
+}
+
+.github {
+  margin-right: 15px;
+}
+.github a {
+  margin-left: 10px;
+  color: white;
+  text-decoration: none;
+}
