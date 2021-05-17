@@ -24,7 +24,7 @@ module.exports = {
     if (cliente.length == 0) {
       return res.status(400).json({
         sucess: false,
-        msg: "CPF invalido",
+        msg: "CPF não encontrado",
       });
     } else {
       return res.json({

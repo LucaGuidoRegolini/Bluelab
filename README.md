@@ -1,6 +1,6 @@
 # Registro de cliente Blue Lab
 
-Website capas de armazenar dados cadastrados de clientes em seu banco de dados, seu frontend foi feito em **ReactJS**, uma biblioteca JavaScript de código aberto mantida pelo Facebook, e seu backend foi feito em **NodeJs**, um software de código aberto, multiplataforma, que executa códigos JavaScript.
+Website capaz de armazenar dados cadastrados de clientes em seu banco de dados, seu frontend foi feito em **ReactJS**, uma biblioteca JavaScript de código aberto mantida pelo Facebook, e seu backend foi feito em **NodeJs**, um software de código aberto, multiplataforma, que executa códigos JavaScript.
 
 ## Fases do desafio concluída
 
@@ -13,7 +13,7 @@ Website capas de armazenar dados cadastrados de clientes em seu banco de dados, 
 
 Pelo Prompt de comando, no diretório da aplicação executar os seguintes comandos para iniciar o **backend**.
 
-> é necessario ter o NodeJs instalado.
+> é necessário ter o NodeJs instalado.
 
 ```cmd
 cd backend
@@ -21,11 +21,11 @@ npm install
 npm start
 ```
 
-> Instância ira iniciar em **http://localhost:3333/**
+> A instância ira iniciar em **http://localhost:3333/**
 
 Pelo Prompt de comando, no diretório da aplicação executar os seguintes comandos para iniciar o **frontend**.
 
-> é necessario ter o NodeJs instalado.
+> é necessário ter o NodeJs instalado.
 
 ```cmd
 cd frontend
@@ -33,20 +33,20 @@ npm install
 npm start
 ```
 
-> Instância ira iniciar em **http://localhost:3000/**
+> A instância ira iniciar em **http://localhost:3000/**
 
 ## Documentação API
 
 #### Listando clientes
 
-para pode-se usar o método **GET**, ira listar todos os clientes no banco de dados.
+Deve-se usar o método **GET**, para listar todos os clientes no banco de dados.
 
 ```http
 https://blulab-api.herokuapp.com/
 ```
 
 através de **Querys** podemos dividir a lista em paginas.
-com **total** definiremos o total de item por pagina.
+com **total** definiremos o total de itens por pagina.
 
 e com **page** definiremos a pagina que queremos acessar.
 
@@ -113,7 +113,7 @@ https://blulab-api.herokuapp.com/18572747257
 
 > O formato do telefone deve ser (99)99999999 para telefones 
 > e (99)999999999 para celulares
-> o formato para o cpf é 99999999999, sem numhuma pontuação
+> o formato para o CPF é 99999999999, sem nenhuma pontuação,
 > todos os valores devem ser passados dentro de aspas 
 > para que sejam mandados em **String**.
 
@@ -122,8 +122,14 @@ https://blulab-api.herokuapp.com/18572747257
 **Cuidado, ao deletar um registro o mesmo não poderá ser restaurado**
 
 Será necessário usar o método **DELETE**, a URL deve ser a mesma usada até agora, sem nenhum parâmetro na frente.
->Essa rota tambem não sera execultada no navegador
->deve-se um um aplicativo como  **Insomnia** .
+>Essa rota também não será executada no navegador
+>deve-se usar um um aplicativo como  **Insomnia** .
 ```http
 https://blulab-api.herokuapp.com/
 ```
+
+
+
+## Aviso
+>A api está alocada na hospedagem gratuita do Heroku, por isso pode demorar um pouco para responder, ou seja não é por falta de habilidade do programador, mas sim por falta de dinheiro.
+

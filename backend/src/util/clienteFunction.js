@@ -5,7 +5,7 @@ module.exports = {
     let Soma;
     let Resto;
     Soma = 0;
-    if (cpf == "00000000000") return false;
+    if (/^(.)\1+$/.test(cpf)) return false;
 
     for (let i = 1; i <= 9; i++)
       Soma = Soma + parseInt(cpf.substring(i - 1, i)) * (11 - i);
