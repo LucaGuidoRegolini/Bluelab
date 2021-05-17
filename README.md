@@ -30,7 +30,7 @@ Pelo Prompt de comando, no diretório da aplicação executar os seguintes coman
 ```cmd
 cd frontend
 npm install
-npm start
+npm dev
 ```
 
 > A instância ira iniciar em **http://localhost:3000/**
@@ -66,7 +66,8 @@ também com o método **GET** podemos selecionar um cliente em especial, basta c
 https://blulab-api.herokuapp.com/18572747257
 ```
 
-#### Criando  cliente
+#### Criando cliente
+
 Agora será necessário usar o método **POST**, a URL deve ser a mesma usada até agora, sem nenhum parâmetro na frente.
 
 > Navegadores como o Google Chrome por padrão usam apenas o método **GET**
@@ -76,60 +77,62 @@ Agora será necessário usar o método **POST**, a URL deve ser a mesma usada at
 https://blulab-api.herokuapp.com
 ```
 
->**padrão para a criação do registro**
+> **padrão para a criação do registro**
 
 ```json
 {
-	"cpf": "cpf do cliente",
-	"nome": "nome do cliente",
-	"sobrenome": "sobrenome do cliente",
-	"telefone": "telefone do cliente"
+  "cpf": "cpf do cliente",
+  "nome": "nome do cliente",
+  "sobrenome": "sobrenome do cliente",
+  "telefone": "telefone do cliente"
 }
 ```
-> O formato do telefone deve ser (99)99999999 para telefones 
+
+> O formato do telefone deve ser (99)99999999 para telefones
 > e (99)999999999 para celulares
 > o formato para o CPF é 99999999999, sem nenhuma pontuação
-> todos os valores devem ser passados dentro de aspas 
+> todos os valores devem ser passados dentro de aspas
 > para que sejam mandados em **String**.
 
-#### Editando  cliente
-deve-se usar o método **PUT**, a URL deve ser as mesma, porem com o **CPF** do cliente sendo passado como um  **Route Params**.
+#### Editando cliente
 
->Lembre-se de usar um aplicativo como **Insomnia** que nem a rota anterior
+deve-se usar o método **PUT**, a URL deve ser as mesma, porem com o **CPF** do cliente sendo passado como um **Route Params**.
+
+> Lembre-se de usar um aplicativo como **Insomnia** que nem a rota anterior
 
 ```http
 https://blulab-api.herokuapp.com/18572747257
 ```
 
->**padrão para a alteração do registro**
+> **padrão para a alteração do registro**
 
 ```json
 {
-	"nome": "nome do cliente",
-	"sobrenome": "sobrenome do cliente",
-	"telefone": "telefone do cliente"
+  "nome": "nome do cliente",
+  "sobrenome": "sobrenome do cliente",
+  "telefone": "telefone do cliente"
 }
 ```
 
-> O formato do telefone deve ser (99)99999999 para telefones 
+> O formato do telefone deve ser (99)99999999 para telefones
 > e (99)999999999 para celulares
 > o formato para o CPF é 99999999999, sem nenhuma pontuação,
-> todos os valores devem ser passados dentro de aspas 
+> todos os valores devem ser passados dentro de aspas
 > para que sejam mandados em **String**.
 
-#### Deletando  cliente
+#### Deletando cliente
 
 **Cuidado, ao deletar um registro o mesmo não poderá ser restaurado**
 
-Será necessário usar o método **DELETE**, a URL deve ser a mesma usada até agora, scom o **CPF** do cliente sendo passado como um  **Route Params**.
->Essa rota também não será executada no navegador
->deve-se usar um um aplicativo como  **Insomnia** .
+Será necessário usar o método **DELETE**, a URL deve ser a mesma usada até agora, scom o **CPF** do cliente sendo passado como um **Route Params**.
+
+> Essa rota também não será executada no navegador
+> deve-se usar um um aplicativo como **Insomnia** .
+
 ```http
 https://blulab-api.herokuapp.com/18572747257
 ```
 
-
-
 ## Aviso
->A api está alocada na hospedagem gratuita do Heroku, por isso pode demorar um pouco para responder, ou seja não é por falta de habilidade do programador, mas sim por falta de dinheiro.
 
+> A api está alocada na hospedagem gratuita do Heroku, por isso pode demorar um pouco para responder, ou seja não é por falta de habilidade do programador, mas sim por falta de dinheiro.
