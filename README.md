@@ -121,11 +121,11 @@ https://blulab-api.herokuapp.com/18572747257
 
 **Cuidado, ao deletar um registro o mesmo não poderá ser restaurado**
 
-Será necessário usar o método **DELETE**, a URL deve ser a mesma usada até agora, sem nenhum parâmetro na frente.
+Será necessário usar o método **DELETE**, a URL deve ser a mesma usada até agora, scom o **CPF** do cliente sendo passado como um  **Route Params**.
 >Essa rota também não será executada no navegador
 >deve-se usar um um aplicativo como  **Insomnia** .
 ```http
-https://blulab-api.herokuapp.com/
+https://blulab-api.herokuapp.com/18572747257
 ```
 
 
