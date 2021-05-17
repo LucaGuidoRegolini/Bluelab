@@ -30,7 +30,7 @@ Pelo Prompt de comando, no diretório da aplicação executar os seguintes coman
 ```cmd
 cd frontend
 npm install
-npm dev
+npm run dev
 ```
 
 > A instância ira iniciar em **http://localhost:3000/**
@@ -124,7 +124,7 @@ https://blulab-api.herokuapp.com/18572747257
 
 **Cuidado, ao deletar um registro o mesmo não poderá ser restaurado**
 
-Será necessário usar o método **DELETE**, a URL deve ser a mesma usada até agora, scom o **CPF** do cliente sendo passado como um **Route Params**.
+Será necessário usar o método **DELETE**, a URL deve ser a mesma usada até agora, com o **CPF** do cliente sendo passado como um **Route Params**.
 
 > Essa rota também não será executada no navegador
 > deve-se usar um um aplicativo como **Insomnia** .
